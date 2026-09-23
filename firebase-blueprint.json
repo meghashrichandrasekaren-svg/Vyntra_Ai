@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "users": {
+      "title": "UserProfile",
+      "description": "User profile document stored upon Google Sign-In",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "bookings": {
+      "title": "BookingRecord",
+      "description": "User travel booking document",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "pnr": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["userId", "pnr", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/users" },
+      "description": "Private user profile documents"
+    },
+    "/users/{userId}/bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/bookings" },
+      "description": "User travel bookings subcollection"
+    }
+  }
+}

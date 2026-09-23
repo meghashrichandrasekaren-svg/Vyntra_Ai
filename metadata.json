@@ -1,0 +1,6 @@
+{
+  "name": "VYNTRA – Intelligent Travel Platform",
+  "description": "Enterprise-grade travel and flight booking platform featuring real-time Amadeus API integration, digital travel credentials, and AURA Ring interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
